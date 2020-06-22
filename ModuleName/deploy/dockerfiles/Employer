@@ -1,0 +1,3 @@
+FROM mcr.microsoft.com/azure-functions/dotnet:3.0
+
+COPY ./FunctionsApp.Employer/bin/Debug/netcoreapp3.1 /home/site/wwwroot

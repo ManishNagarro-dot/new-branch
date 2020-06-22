@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Repositories\Base\**" />
+    <Compile Remove="Services\Base\**" />
+    <EmbeddedResource Remove="Repositories\Base\**" />
+    <EmbeddedResource Remove="Services\Base\**" />
+    <None Remove="Repositories\Base\**" />
+    <None Remove="Services\Base\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="DatabaseContext\IDatabaseUnitOfWork.cs" />
+    <Compile Remove="DatabaseContext\IUnitOfWorkTransaction.cs" />
+    <Compile Remove="DatabaseContext\UnitOfWorkTransaction.cs" />
+    <Compile Remove="DTOs\BaseDTO.cs" />
+    <Compile Remove="DTOs\IBaseDTO.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Automapper" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.10.1" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
+    <PackageReference Include="Microsoft.ApplicationInsights" Version="2.14.0" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\GOI.Seeker.Master.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="GOI.Services.Common">
+      <HintPath>..\..\..\lib\GOI.Services.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
